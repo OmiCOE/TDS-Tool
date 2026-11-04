@@ -109,7 +109,7 @@ class SharePointTDSProvider:
         while stack:
             fid, rel = stack.pop()
             url = (f"{GRAPH}/drives/{self.drive_id}/items/{fid}/children"
-                   "?$top=200&$select=id,name,folder,file,size")
+                   "?$top=800&$select=id,name,folder,file,size")
             while url:
                 data = self._get(url)
                 for it in data.get("value", []):
